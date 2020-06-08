@@ -8,13 +8,14 @@ import android.os.Bundle;
 import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
+    MyData myData = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MyData myData = new MyData(getApplicationContext());
+        myData = new MyData(getApplicationContext());
         //用this有内存泄露的危险
         myData.number = 1000;
         myData.save();;
